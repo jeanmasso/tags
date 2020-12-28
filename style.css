@@ -1,0 +1,23 @@
+ul {
+    padding: 0 1.5rem;
+}
+
+.form-inline {
+    padding: 0.5rem 1rem;
+}
+
+li {
+    list-style: none;
+    width: 100%;
+}
+
+.badge{
+    display:block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.create-tag:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
