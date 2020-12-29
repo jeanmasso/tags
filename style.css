@@ -1,15 +1,6 @@
-ul {
-    padding: 0 1.5rem;
-}
+.dropdown-menu-tags {max-width: 20rem;}
 
-.form-inline {
-    padding: 0.5rem 1rem;
-}
-
-li {
-    list-style: none;
-    width: 100%;
-}
+.form-inline-tags {padding: 0.5rem 1rem;}
 
 .badge{
     display:block;
