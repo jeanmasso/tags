@@ -1,3 +1,5 @@
+var j = 0;
+
 function searchTag() {
     var searchbar, filter, tagList, div, a, i, txtValue;
     searchbar = document.getElementById("searchbar");
@@ -15,21 +17,27 @@ function searchTag() {
     }
 }
 
-function createTag() {
-    var newTag = $("#newTag").val();
-    var newTagColor = $("#newTagColor").val();
-    if (newTag === "") return ''; else {
-        $("#searchTagList").append(`
-            <div class="tag p-1"><a href="#" class="dropdown-item badge m-0" style="background-color: ${newTagColor}; color: white;">${newTag} <i class="fas fa-times"></i></a></li>
-        `);
-        $("#modalTagList").append(`
-            <div class="tag p-1"><a href="#" class="dropdown-item badge m-0" style="background-color: ${newTagColor}; color: white;">${newTag} <i class="fas fa-times"></i></a></div>
-        `);
+$("#createTag").click(function() {
+    var newTag = '<div class="tag'+j+' p-1"><a href="#" class="dropdown-item badge m-0" style="background-color: '+$("#newTagColor").val()+'; color: white;">'+$("#newTag").val()+' <i onclick="removeTag('+j+')" class="fas fa-times"></i></a></li>';
+    if ($("#newTag").val() === "") return ''; else {
+        j = j;
+        $("#searchTagList").append(newTag);
+        $("#modalTagList").append(newTag);
         $("#newTag").val("");
+        j++;
     };
+})
+
+function removeTag(param) {
+    $(".badge").parent(".tag"+param).remove();
 }
 
-$(document).on("click", ".badge i", function(){
-    $(".badge").parent(".tag").remove();
-});
+// $(document).on("click", ".badge i", function(){
+//     $(".badge").parent(".tag"+j).remove();
+// });
+
+
+
+
+
 
