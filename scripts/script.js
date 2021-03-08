@@ -23,6 +23,6 @@ createTag.addEventListener('submit', function (event) {
 
 /* Remove tags */
 function deleteTag() {
-    this.parentNode
+    this.remove();
 }
 
